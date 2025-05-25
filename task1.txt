@@ -1,0 +1,128 @@
+1.activity_main.xml
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play Music" />
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status: Stopped"
+        android:layout_marginTop="20dp" />
+</LinearLayout>
+
+2.MainActivity.java
+
+
+// Java
+package com.example.musicplayer;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    private TextView statusText;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Button playButton = findViewById(R.id.playButton);
+        statusText = findViewById(R.id.statusText);
+
+        playButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Placeholder for playing music
+                statusText.setText("Status: Playing...");
+            }
+        });
+    }
+}
+
+
+
+3.README File
+
+
+## Description
+
+MusicPlayer is a basic Android application that simulates music playback functionality. It features a simple user interface with a play button and a status display.
+
+## Features
+
+- Play button to simulate music playback.
+- Status text view to display current playback status.
+
+## How to Use
+
+1. Launch the application.
+2. Tap the "Play Music" button.
+3. The status will update to "Status: Playing..." indicating that music is playing.
+
+## Note
+
+This application is a placeholder and does not include actual music playback functionality.
+
+
+
+4.DOCUMENTATION
+
+Music Player App Documentation
+________________________________________
+App Overview
+The Music Player App is an Android application that allows users to play local audio files with basic music controls such as Play, Pause, Next, and Previous. Users can also navigate through different songs and manage their playlist.
+________________________________________
+Technologies Used
+•	Java: For application logic.
+•	XML: For UI design and layout.
+•	Android Jetpack Components (Optional): Navigation, ViewModel.
+•	Local Storage: Songs stored in res/raw folder (sample implementation).
+•	Gradle: Build configuration.
+________________________________________
+App Features
+•	Visually appealing and functional UI using XML layouts.
+•	Basic music controls:
+o	Play
+o	Pause
+o	Next Song
+o	Previous Song
+•	Playlist functionality with a selection of sample songs.
+•	Local storage of audio files (placed in res/raw).
+•	Tested on different device sizes and Android versions for compatibility.
+________________________________________
+How to Build and Run
+1.	Open the project in Android Studio.
+2.	Connect a physical Android device or use an emulator.
+3.	Click Run or build the APK using:
+o	Build > Build APK(s) to generate the APK.
+4.	Locate the generated APK in:
+o	app/build/outputs/apk/debug/app-debug.apk
+5.	Install the APK on your device to test the app.
+________________________________________
+Known Issues or Limitations
+•	The current version supports local playback only (no network streaming).
+•	Advanced features such as dynamic playlists, real-time streaming, or search functionality are not implemented in this version.
+________________________________________
+Submitted By
+•	Name: [P.Bhavana]
+•	Date: [25-05-2025]
+•	Task: Week 1 – Music Player App
+
